@@ -10,14 +10,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@4
+      - name: 1
+        uses: actions/checkout@v4
+      - name: 2
+        uses: actions/setup-node@4
         with:
           node-version: 'latest'
           cache: 'npm'
-      - run: npm install
-      - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
+      - name: 3
+        run: npm install
+      - name: 4
+        run: npm run build
+      - name: 5
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
