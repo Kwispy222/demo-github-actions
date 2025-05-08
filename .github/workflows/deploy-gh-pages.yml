@@ -21,13 +21,13 @@ jobs:
         with:
           path: ./dist
 
-deploy:
-  needs: build
-  runs-on: ubuntu-latest
-  environment:
-    name: gh-pages
-    url: ${{ steps.deployment.outputs.page_url }}
-  steps:
-    - name: Deploy to pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: gh-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to pages
+        id: deployment
+        uses: actions/deploy-pages@v4
